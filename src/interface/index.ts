@@ -18,7 +18,7 @@ export interface Total {
   world: World;
 }
 
-export interface Internal2 {
+export interface VietNam {
   death: number;
   treating: number;
   cases: number;
@@ -33,7 +33,7 @@ export interface World2 {
 }
 
 export interface Today {
-  internal: Internal2;
+  internal: VietNam;
   world: World2;
 }
 

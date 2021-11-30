@@ -15,9 +15,11 @@ export default () => {
 
   return <>
     {!loaded && <h6>Loading ...</h6>}
-    {loaded && <div className="d-flex flex-fill bg-secondary flex-column scroll">
-      <Overview overviews={(covid19Data as Covid19Data).overview.reverse()} />
-      <Covid19ByLocation locations={(covid19Data as Covid19Data).locations} />
+    {loaded && covid19Data && <div className="d-flex flex-fill bg-secondary flex-column scroll">
+      <Overview
+        today={covid19Data.today?.internal}
+        overviews={covid19Data.overview} />
+      <Covid19ByLocation locations={covid19Data.locations} />
     </div>}
   </>
 }

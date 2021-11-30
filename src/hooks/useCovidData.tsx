@@ -4,7 +4,7 @@ import { Covid19Data } from "../interface"
 
 const url = `https://static.pipezero.com/covid/data.json`
 
-const useCovidData = () => {
+const useCovidData = (): [boolean, Covid19Data?] => {
   const [loaded, setLoaded] = useState(false)
   const [response, setResponse] = useState<Covid19Data>()
 
