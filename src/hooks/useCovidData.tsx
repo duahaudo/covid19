@@ -1,15 +1,16 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
+import { Covid19Data } from "../interface"
 
 const url = `https://static.pipezero.com/covid/data.json`
 
-export default () => {
+const useCovidData = () => {
   const [loaded, setLoaded] = useState(false)
-  const [response, setResponse] = useState([])
+  const [response, setResponse] = useState<Covid19Data>()
 
   useEffect(() => {
     axios.get(url).then(res => {
-      setResponse(res.data as any)
+      setResponse(res.data as Covid19Data)
     }).finally(() => {
       setLoaded(true)
     })
@@ -17,3 +18,5 @@ export default () => {
 
   return [loaded, response]
 }
+
+export default useCovidData
