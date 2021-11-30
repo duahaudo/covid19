@@ -1,21 +1,10 @@
 import { Overview } from "../interface"
-
-
-const Line = ({ caption, value, color }: {
-  caption: string
-  value: number | string
-  color?: string
-}) => {
-  return <div className="d-flex justify-content-between">
-    <div className="text-secondary">{caption}</div>
-    <div className={color}>{value}</div>
-  </div>
-}
+import Line from "./line"
 
 const OverviewPanel = (props: {
   overviews: Overview[]
 }) => {
-  return <div className="bg-white m-1 p-2">
+  return <div className="bg-white m-2 p-2 rounded-3">
     <h4 className="overview text-primary">Overview</h4>
 
     <div className="d-flex flex-wrap border-top">
