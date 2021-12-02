@@ -8,7 +8,7 @@ const Today = (props: {
   view: PAGE
   setView: Dispatch<SetStateAction<PAGE>>
 }) => {
-
+  const { setView } = props
   const getClassName = useCallback(
     (view: PAGE) => {
       return view === props.view ? "text-primary" : "text-secondary"
@@ -18,10 +18,10 @@ const Today = (props: {
 
   const setCurrentView = useCallback(
     (view) => {
-      props.setView(view)
+      setView(view)
       localStorage.setItem(LOCAL_STORAGE_KEY.PAGE, view)
     },
-    [],
+    [setView],
   )
 
   return <Panel>
