@@ -16,3 +16,7 @@ code {
   height: 100vh;
   overflow-y: auto;
 }
+
+.margin--1 {
+  margin-left: -1px;
+}

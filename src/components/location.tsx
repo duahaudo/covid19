@@ -9,7 +9,7 @@ const Covid19ByLocation = (props: {
 
     <div className="d-flex flex-wrap border-top">
       {props.locations.map((location, idx) => {
-        return <div key={location.name} className={"col-6 p-2 border border-top-0 " + (idx % 2 === 1 ? "border-start-0" : "")}>
+        return <div key={location.name} className={"col-6 col-sm-6 col-md-3 col-lg-2 p-2 border border-top-0 margin--1"}>
           <Line value={location.name} color="text-primary mb-2" />
           <Line caption="Total" value={location.cases} />
           <Line caption="Today" value={location.casesToday} color="text-danger" />
