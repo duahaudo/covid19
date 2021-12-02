@@ -64,3 +64,7 @@ export interface Covid19Data {
   locations: Location[];
 }
 
+export enum PAGE {
+  Overview = "Overview",
+  Details = "Details"
+}
