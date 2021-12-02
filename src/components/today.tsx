@@ -21,7 +21,7 @@ const Today = (props: {
       props.setView(view)
       localStorage.setItem(LOCAL_STORAGE_KEY.PAGE, view)
     },
-    [],
+    [props.setView],
   )
 
   return <Panel>
