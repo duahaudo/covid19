@@ -1,5 +1,5 @@
 import { useMemo } from "react"
-import { Overview, VietNam } from "../interface"
+import { Overview } from "../interface"
 import Box from "./box"
 import Line from "./line"
 import Panel from "./panel"

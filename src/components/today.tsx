@@ -13,7 +13,7 @@ const Today = (props: {
     (view: PAGE) => {
       return view === props.view ? "text-primary" : "text-secondary"
     },
-    [props.view],
+    [props.view]
   )
 
   const setCurrentView = useCallback(
