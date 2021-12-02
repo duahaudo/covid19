@@ -1,5 +1,5 @@
 import { Dispatch, SetStateAction, useCallback } from "react"
-import { PAGE, VietNam } from "../interface"
+import { LOCAL_STORAGE_KEY, PAGE, VietNam } from "../interface"
 import Line from "./line"
 import Panel from "./panel"
 
@@ -19,7 +19,7 @@ const Today = (props: {
   const setCurrentView = useCallback(
     (view) => {
       props.setView(view)
-      localStorage.setItem('PAGE', view)
+      localStorage.setItem(LOCAL_STORAGE_KEY.PAGE, view)
     },
     [],
   )

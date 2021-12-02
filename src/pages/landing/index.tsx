@@ -3,7 +3,7 @@ import Covid19ByLocation from "../../components/location";
 import Overview from "../../components/overview";
 import Today from "../../components/today";
 import useCovidData from "../../hooks/useCovidData";
-import { PAGE } from "../../interface";
+import { LOCAL_STORAGE_KEY, PAGE } from "../../interface";
 import "./style.scss";
 
 
@@ -13,10 +13,11 @@ export default () => {
 
   useEffect(() => {
     console.log(`👉  SLOG (${new Date().toLocaleTimeString()}): 🏃‍♂️ response`, covid19Data)
-    const view = localStorage.getItem('PAGE')
+    const view = localStorage.getItem(LOCAL_STORAGE_KEY.PAGE)
     if (view) {
       setView(view as PAGE)
     }
+
   }, [loaded])
 
   return <>

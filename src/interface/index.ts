@@ -68,3 +68,9 @@ export enum PAGE {
   Overview = "Overview",
   Details = "Details"
 }
+
+export enum LOCAL_STORAGE_KEY {
+  PAGE = "PAGE",
+  TIME_STAMP = "TIME_STAMP",
+  COVID19_DATA = "COVID19_DATA"
+}
