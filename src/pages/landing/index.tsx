@@ -7,12 +7,11 @@ import { LOCAL_STORAGE_KEY, PAGE } from "../../interface";
 import "./style.scss";
 
 
-export default () => {
+const Landing = () => {
   const [loaded, covid19Data] = useCovidData()
   const [view, setView] = useState<PAGE>(PAGE.Overview)
 
   useEffect(() => {
-    console.log(`👉  SLOG (${new Date().toLocaleTimeString()}): 🏃‍♂️ response`, covid19Data)
     const view = localStorage.getItem(LOCAL_STORAGE_KEY.PAGE)
     if (view) {
       setView(view as PAGE)
@@ -31,3 +30,5 @@ export default () => {
     </div>}
   </>
 }
+
+export default Landing
