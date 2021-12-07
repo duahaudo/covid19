@@ -1,14 +1,15 @@
 import { Dispatch, SetStateAction, useCallback } from "react"
-import { LOCAL_STORAGE_KEY, PAGE, VietNam } from "../interface"
+import moment from "moment"
+import { LOCAL_STORAGE_KEY, PAGE, Overview } from "../interface"
 import Line from "./line"
 import Panel from "./panel"
 
 const Today = (props: {
-  today: VietNam,
+  today: Overview,
   view: PAGE
   setView: Dispatch<SetStateAction<PAGE>>
 }) => {
-  const { setView } = props
+  const { setView, today } = props
   const getClassName = useCallback(
     (view: PAGE) => {
       return view === props.view ? "text-primary" : "text-secondary"
@@ -27,11 +28,11 @@ const Today = (props: {
   return <Panel>
     <>
       <div className="overview fs-6 p-3 pb-0 d-flex justify-content-between ">
-        <div className="text-primary">{new Date().toDateString()}</div>
+        <div className="text-primary">{moment(today.date, "DD-MM").format("ddd, MMM DD YYYY")}</div>
         <div className="d-flex">
-          <div onClick={() => setCurrentView(PAGE.Overview)}
+          <div role="button" onClick={() => setCurrentView(PAGE.Overview)}
             className={getClassName(PAGE.Overview)}>Overview</div>
-          <div onClick={() => setCurrentView(PAGE.Details)}
+          <div role="button" onClick={() => setCurrentView(PAGE.Details)}
             className={"ms-3 " + getClassName(PAGE.Details)}>Details</div>
         </div>
       </div>
