@@ -16,6 +16,7 @@ interface Props {
   type: "line" | "doughnut"
   options: Options
   height: number
+  showLabel?: boolean
 }
 
 const ChartEle = (props: Props) => {
@@ -30,7 +31,7 @@ const ChartEle = (props: Props) => {
         options: {
           plugins: {
             legend: {
-              display: false
+              display: !!props.showLabel
             }
           },
           maintainAspectRatio: false,

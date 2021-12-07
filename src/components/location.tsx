@@ -15,7 +15,21 @@ const Covid19ByLocation = (props: {
       labels: props.locations.map(item => item.name),
       datasets: [
         {
-          label: "Death total",
+          label: "Total Cases",
+          data: props.locations.map(item => item.cases),
+          backgroundColor: [
+            "#ffc107"
+          ]
+        },
+        {
+          label: "Cases Today",
+          data: props.locations.map(item => item.casesToday),
+          backgroundColor: [
+            "#fd7e14"
+          ]
+        },
+        {
+          label: "Death",
           data: props.locations.map(item => item.death),
           backgroundColor: [
             "rgb(220, 53, 69)"
