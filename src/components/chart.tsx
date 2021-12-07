@@ -13,8 +13,9 @@ export interface Options {
 }
 
 interface Props {
-  type: "line"
+  type: "line" | "doughnut"
   options: Options
+  height: number
 }
 
 const ChartEle = (props: Props) => {
@@ -29,7 +30,7 @@ const ChartEle = (props: Props) => {
         options: {
           plugins: {
             legend: {
-              display: true
+              display: false
             }
           },
           maintainAspectRatio: false,
@@ -50,7 +51,7 @@ const ChartEle = (props: Props) => {
   }, [ref, props, chart])
 
   return <div>
-    <canvas ref={ref} height="200"></canvas>
+    <canvas ref={ref} height={props.height}></canvas>
   </div>
 }
 

@@ -27,7 +27,7 @@ const OverviewPanel = (props: {
 
   return <>
     <Panel>
-      <Chart type="line" options={options} />
+      <Chart type="line" options={options} height={200} />
     </Panel>
     <Panel>
       <div className="d-flex flex-wrap border-top">
