@@ -31,11 +31,15 @@ const Landing = () => {
 
   return <>
     {!loaded && <h6>Loading ...</h6>}
-    {loaded && covid19Data && <div className="d-flex flex-fill flex-column">
+    {loaded && covid19Data && <div className="d-flex flex-fill flex-column pt-3">
       <Today today={overviewData[0]} setView={setView} view={view} />
       <div className="d-flex flex-fill flex-column scroll">
         {view === PAGE.Overview && <Overview overviews={overview || []} />}
         {view === PAGE.Details && < Covid19ByLocation locations={covid19Data.locations} />}
+
+        <div className="p-3 pt-0">
+          Stiger Dieu
+        </div>
       </div>
     </div>}
   </>
